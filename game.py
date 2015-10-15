@@ -7,6 +7,7 @@ from parser_new import *
 import player
 
 
+
 def list_of_items(items):
     """This function takes a list of items (see items.py for the definition) and
     returns a comma-separated list of item names (as a string). For example:
@@ -39,6 +40,7 @@ def list_of_items(items):
     """
 
 
+
 def print_room_items(room):
     """This function takes a room as an input and nicely displays a list of items
     found in this room (followed by a blank line). If there are no items in
@@ -62,22 +64,6 @@ def print_room_items(room):
     else:
         return print("(no output)")
 
-
-def print_inventory_items(items):
-    """This function takes a list of inventory items and displays it nicely, in a
-    manner similar to print_room_items(). The only difference is in formatting:
-    print "You have ..." instead of "There is ... here.". For example:
-    >>> print_inventory_items(inventory)
-    You have id card, laptop, money.
-    <BLANKLINE>
-    """
-    
-    # check that the list of items is not empty
-    if len(items) != 0:
-        # print the list of items
-        print("You have " + list_of_items(items) + ".\n")    
-    else:
-        print("You are not carrying any items.")
 
 
 def print_room(room):
@@ -134,6 +120,25 @@ def print_room(room):
         print_room_items(room)
 
 
+
+def print_inventory_items(items):
+    """This function takes a list of inventory items and displays it nicely, in a
+    manner similar to print_room_items(). The only difference is in formatting:
+    print "You have ..." instead of "There is ... here.". For example:
+    >>> print_inventory_items(inventory)
+    You have id card, laptop, money.
+    <BLANKLINE>
+    """
+    
+    # check that the list of items is not empty
+    if len(items) != 0:
+        # print the list of items
+        print("You have " + list_of_items(items) + ".\n")    
+    else:
+        print("You are not carrying any items.")
+
+
+
 def exit_leads_to(exits, direction):
     """This function takes a dictionary of exits and a direction (a particular
     exit taken from this dictionary). It returns the name of the room into which
@@ -148,6 +153,7 @@ def exit_leads_to(exits, direction):
     return rooms[exits[direction]]["name"]
 
 
+
 def print_exit(direction, leads_to):
     """This function prints a line of a menu of exits. It takes a direction (the
     name of an exit) and the name of the room into which it leads (leads_to),
@@ -160,6 +166,7 @@ def print_exit(direction, leads_to):
     GO SOUTH to MJ and Simon's room.
     """
     print("Go " + direction.upper() + " to " + leads_to + ".")
+
 
 
 def print_menu(exits, room_items, inv_items):
@@ -191,6 +198,7 @@ def print_menu(exits, room_items, inv_items):
     for direction in exits:
         # Print the exit name and where it leads to
         print_exit(direction, exit_leads_to(exits, direction))
+<<<<<<< HEAD
 
     for item in room_items:
         print ("TAKE " + item["id"].upper() + " to take " + item["name"])
@@ -200,8 +208,11 @@ def print_menu(exits, room_items, inv_items):
     #
     # COMPLETE ME!
     #
+=======
+>>>>>>> 2522006ebce9441c078f801ae45b77a932841e7e
     
     print("What do you want to do?")
+
 
 
 def is_valid_exit(exits, chosen_exit):
@@ -222,6 +233,7 @@ def is_valid_exit(exits, chosen_exit):
     return chosen_exit in exits
 
 
+
 def execute_go(direction):
     """This function, given the direction (e.g. "south") updates the current room
     to reflect the movement of the player if the direction is a valid exit
@@ -234,6 +246,7 @@ def execute_go(direction):
     else:
         print("You cannot go there")
     # this does not work in it's current state. It says current_room is not assigned.
+
 
 
 def execute_take(input_item_id):
@@ -252,6 +265,7 @@ def execute_take(input_item_id):
         print("You cannot take " + input_item_id + "!")
        
 
+
 def execute_drop(input_item_id):
     """This function takes an input_item_id as an argument and moves this item from the
     player's inventory to list of items in the current room. However, if there is
@@ -266,6 +280,7 @@ def execute_drop(input_item_id):
     else:
         print("You cannot drop " + input_item_id + "!")
     
+
 
 def execute_command(command):
     """This function takes a command (a list of words as returned by
@@ -304,6 +319,7 @@ def execute_command(command):
         command = normalise_input(user_input)
 
 
+
 def menu(exits, room_items, inv_items):
     """This function, given a dictionary of possible exits from a room, and a list
     of items found in the room and carried by the player, prints the menu of
@@ -324,6 +340,7 @@ def menu(exits, room_items, inv_items):
     return normalised_user_input
 
 
+
 def move(exits, direction):
     """This function returns the room into which the player will move if, from a
     dictionary "exits" of avaiable exits, they choose to move towards the exit
@@ -340,6 +357,7 @@ def move(exits, direction):
     return rooms[exits[direction]]
 
 
+
 def victory(input):
     if player.current_room['name'] == "your personal tutor's office":
         if input[0] == "give" and input[1] == "tutor" and input[2] == "biscuits":
@@ -348,6 +366,7 @@ def victory(input):
                 return True
             else:
                 print("You do not have any biscuits!")
+
 
 
 # This is the entry point of our program
@@ -379,8 +398,6 @@ def main():
 
 
 
-# Are we being run as a script? If so, run main().
-# '__main__' is the name of the scope in which top-level code executes.
-# See https://docs.python.org/3.4/library/__main__.html for explanation
+
 if __name__ == "__main__":
     main()

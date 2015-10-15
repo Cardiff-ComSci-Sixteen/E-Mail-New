@@ -44,6 +44,7 @@ item_biscuits = {
 
 }
 
+<<<<<<< HEAD
 item_pen = {
     "id": "pen",
     
@@ -54,6 +55,8 @@ item_pen = {
     "mass": 0.70
 }
 
+=======
+>>>>>>> 2522006ebce9441c078f801ae45b77a932841e7e
 item_handbook = {
     "id": "handbook",
     
@@ -62,6 +65,14 @@ item_handbook = {
     "description": "This student handbook explains everything. Seriously.",
 
     "mass": 1.00
+}
+
+item_pen = {
+    "id": "pen",
+    
+    "name": "a pen",
+
+    "description": "A basic ballpoint pen."
 }
 
 all_items = {
