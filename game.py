@@ -159,7 +159,7 @@ def print_exit(direction, leads_to):
     >>> print_exit("south", "MJ and Simon's room")
     GO SOUTH to MJ and Simon's room.
     """
-    print("GO " + direction.upper() + " to " + leads_to + ".")
+    print("Go " + direction.upper() + " to " + leads_to + ".")
 
 
 def print_menu(exits, room_items, inv_items):
@@ -192,6 +192,11 @@ def print_menu(exits, room_items, inv_items):
         # Print the exit name and where it leads to
         print_exit(direction, exit_leads_to(exits, direction))
 
+    for item in room_items:
+        print ("TAKE " + item["id"].upper() + " to take " + item["name"])
+
+    for item in inv_items:
+        print ("DROP " + item["id"].upper() + " to drop " + item["name"])
     #
     # COMPLETE ME!
     #
@@ -348,6 +353,8 @@ def victory(input):
 # This is the entry point of our program
 def main():
 
+    mass = 0.00
+
     # Main game loop
     while True:
         # Display game status (room description, inventory etc.)
@@ -362,6 +369,12 @@ def main():
         if victory(command):
             print("\n\n" + "YOU WIN!!!" + "\n")
             break
+        for item in player.inventory:
+            mass += item["mass"]
+        if mass >= 3.00:
+            print ("You are carrying too much weight, please drop items")
+            input_item_id = input("What item would you like to drop?: ")
+            execute_drop(input_item_id)
 
 
 
