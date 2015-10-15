@@ -44,7 +44,7 @@ item_biscuits = {
 
 }
 
-<<<<<<< HEAD
+
 item_pen = {
     "id": "pen",
     
@@ -55,8 +55,7 @@ item_pen = {
     "mass": 0.70
 }
 
-=======
->>>>>>> 2522006ebce9441c078f801ae45b77a932841e7e
+
 item_handbook = {
     "id": "handbook",
     
