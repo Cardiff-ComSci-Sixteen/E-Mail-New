@@ -165,7 +165,7 @@ def print_exit(direction, leads_to):
     >>> print_exit("south", "MJ and Simon's room")
     GO SOUTH to MJ and Simon's room.
     """
-    print("Go " + direction.upper() + " to " + leads_to + ".")
+    print("GO " + direction.upper() + " to " + leads_to + ".")
 
 
 
