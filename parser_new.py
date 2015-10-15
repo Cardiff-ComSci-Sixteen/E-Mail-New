@@ -2,14 +2,14 @@ import string
 
 # List of "unimportant" words (feel free to add more)
 skip_words = ['a', 'about', 'all', 'an', 'another', 'any', 'around', 'at',
-              'bad', 'beautiful', 'been', 'better', 'big', 'can', 'every', 'for',
-              'from', 'good', 'have', 'her', 'here', 'hers', 'his', 'how',
-              'i', 'if', 'in', 'into', 'is', 'it', 'its', 'large', 'later',
-              'like', 'little', 'main', 'me', 'mine', 'more', 'my', 'now',
+              'bad', 'beautiful', 'because', 'been', 'better', 'big', 'can', 'even', 'every', 'for',
+              'from', 'get', 'good', 'have', 'her', 'here', 'hers', 'his', 'how',
+              'i', 'if', 'in', 'into', 'is', 'it', 'its', 'large', 'later', 'just',
+              'like', 'little', 'main', 'me', 'mine', 'more', 'my', 'not', 'now',
               'of', 'off', 'oh', 'on', 'pack', 'please', 'small', 'some', 'soon', 'student',
               'that', 'the', 'then', 'this', 'those', 'through', 'till', 'to',
               'towards', 'until', 'us', 'want', 'we', 'what', 'when', 'why',
-              'wish', 'with', 'would']
+              'wish', 'with', 'work', 'would']
 
 
 def filter_words(words, skip_words):
@@ -46,11 +46,7 @@ def remove_punct(text):
         text = text.replace(punctuation, "")
     return text
 
-#    no_punct = ""
-#    for char in text:
-#        if not (char in string.punctuation):
-#            no_punct = no_punct + char
-#    return no_punct
+
 
 
 def normalise_input(user_input):

@@ -34,20 +34,20 @@ item_biscuits = {
     "description": "A pack of biscuits."
 }
 
-item_pen = {
-    "id": "pen",
-    
-    "name": "a pen",
-
-    "description": "A basic ballpoint pen."
-}
-
 item_handbook = {
     "id": "handbook",
     
     "name": "a student handbook",
 
     "description": "This student handbook explains everything. Seriously."
+}
+
+item_pen = {
+    "id": "pen",
+    
+    "name": "a pen",
+
+    "description": "A basic ballpoint pen."
 }
 
 all_items = {
